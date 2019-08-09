@@ -40,6 +40,46 @@ class UI {
 
     }
 
+    //show alert
+    showAlert(message, className) {
+        //clear any remaining alerts
+        this.clearAlert();
+        //create div
+        const div = document.createElement('div');
+        //add classes
+        div.className = className;
+        //Add text
+        div.appendChild(document.createTextNode(message));
+
+        //get paarent element to add div to
+        const container = document.querySelector(".searchContainer");
+
+        //get searchbox
+        const search = document.querySelector(".search");
+        //insert alert
+        container.insertBefore(div, search); //insert alert msg(div) before search in container(parent). search is the card
+
+        //alert dissapper after 2seconds
+        setTimeout( () =>{
+            this.clearAlert();
+        },2000 ); //clear alert msg after 2seconds
+    }
+
+
+
+    //clear alert message
+        clearAlert(){
+            //get alert
+            const currentAlert = document.querySelector(".alert");
+            if(currentAlert){
+                currentAlert.remove()
+
+            }
+        }
+
+
+
+    //clear profile
     clearProfile(){
         this.profile.innerHTML = "";
 
