@@ -21,25 +21,28 @@ class UI {
                     <br><br>
                     <ul class="list-group">
                     <li class="list-group-item">Company: ${user.company}</li>
-                    <li class="list-group-item">Blog/Website: ${user.company}</li>
-                    <li class="list-group-item">Location: ${user.company}</li>
+                    <li class="list-group-item">Blog/Website: ${user.blog}</li>
+                    <li class="list-group-item">User Url: ${user.html_url}</li>
                     <li class="list-group-item">Joined: ${user.created_at}</li>
                     </ul>
                     </div>
             </div>
         
         
-        </div>      
+        </div> 
+        
+        <h3 class="page-heading mb-3">Latest Repos</h3>
+        <div id="repos"></div>     
         
         
-        
-        
-        
-        
-        
-        
-        
-        `
+         
+        `;
 
     }
+
+    clearProfile(){
+        this.profile.innerHTML = "";
+
+    }
+
 }

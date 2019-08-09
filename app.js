@@ -32,25 +32,12 @@ searchUser.addEventListener('keyup', (e) => {
               ui.showProfile(data.profile);//takes in a user and we get that from data.profile
           }
 
-
-
-
-
-
-
             })
 
     } else {
         //clear profile, through ui class
+        ui.clearProfile();
     }
-
-
-
-
-
-
-
-
 
 
 });
