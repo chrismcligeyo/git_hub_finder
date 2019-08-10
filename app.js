@@ -31,7 +31,8 @@ searchUser.addEventListener('keyup', (e) => {
           } else {
               //show profile. through ui class
               ui.showProfile(data.profile);//takes in a user and we get that from data.profile
-          }
+              ui.showRepos(data.repos);
+              }
 
             })
 

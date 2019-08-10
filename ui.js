@@ -13,7 +13,7 @@ class UI {
                 <a href="${user.html_url}" target="_blank" class="btn btn-primary btn-block">View Profile</a>
                 </div>
                     <div class="col-md-6">
-                    <span class="badge badge-pill badge-info" rows="5">Type: ${user.type}</span>
+                    <span class="badge badge-pill badge-info">Type: ${user.type}</span>
                     <span class="badge  badge-pill badge-primary">Public Repos: ${user.public_repos}</span>
                     <span class="badge badge-pill badge-secondary">Public Gists: ${user.public_gists}</span>
                     <span class="badge badge-pill badge-primary">Followers: ${user.followers}</span>
@@ -37,6 +37,46 @@ class UI {
         
          
         `;
+
+    }
+
+    //Show user repos
+
+    showRepos(repos){ //repos stored as array, sowe ave to loop through to display each
+
+        let output = "";
+        repos.forEach(function(repo) {
+
+            output += `
+            
+            <div class="card card-body mb-3">
+                <div class="row">
+                    <div class="col-md-6">
+                    
+                    <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+                    
+                    </div>
+                    
+                    <div class="col-md-6">
+                    <span class="badge badge-pill badge-info">Forks: ${repo.forks_count}</span>
+                    <span class="badge  badge-pill badge-primary">Stars: ${repo.stargazers_count}</span>
+                    <span class="badge badge-pill badge-secondary">Language: ${repo.language}</span>
+                    <span class="badge badge-pill badge-primary">Watchers: ${repo.watchers_count}</span>
+                    <span class="badge badge-pill badge-primary">Size: ${repo.size}</span>
+                    <br><br> 
+                    </div>
+                </div>
+            </div>   
+                    
+            
+            
+            
+            
+            `
+        });
+        //output repositories
+
+        document.getElementById('repos').innerHTML = output;
 
     }
 
